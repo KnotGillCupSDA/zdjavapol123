@@ -7,6 +7,8 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
 import com.sda.testingadvanced.parametrized.Calculator;
 
@@ -55,5 +57,24 @@ public class CalculatorTest {
 
 		//then
 		assertEquals(-3.0, sum, "-2 + -1 should be -3");
+	}
+
+	@Test
+	void shouldAddPositiveAndNegativeNumber() {
+		//when
+		double sum = calculator.add(-2.0, 1.0);
+
+		//then
+		assertEquals(-1.0, sum, "-2 + 1 should be -1");
+	}
+
+	@ParameterizedTest
+	@ValueSource(doubles = {-1, -1.0, 0.0, 0, 1.0, 1, 6.666, 1023313104})
+	void shouldAddZero(double number) {
+		//when
+		double sum = calculator.add(number, 0.0);
+
+		//then
+		assertEquals(number, sum, number + " + 0 should be " + number);
 	}
 }
