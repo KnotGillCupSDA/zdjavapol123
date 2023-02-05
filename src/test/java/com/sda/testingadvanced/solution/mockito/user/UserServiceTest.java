@@ -1,4 +1,4 @@
-package com.sda.testingadvanced.solution.mockito;
+package com.sda.testingadvanced.solution.mockito.user;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
