@@ -1,6 +1,8 @@
 package com.sda.testingadvanced.solution.mockito;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 import java.util.Optional;
@@ -39,6 +41,7 @@ public class UserServiceTest {
 
 		//then
 		assertEquals(tomaszWozniak, actualUser);
+		verify(userRepository, times(1)).findById(7L);
 
 	}
 }
