@@ -30,6 +30,13 @@ class DivisibilityCheckerTest {
 	@ParameterizedTest
 	@CsvSource(value = {"-2, false", "-3, true", "0, true", "1, false", "3, true"})
 	void testDivisibilityBy3(Integer number, boolean expected) {
+
+		/*
+		What is happening in the background is something like this:
+		String strNumber = "-2";
+		Integer n = Integer.parseInt(strNumber);
+		 */
+
 		boolean result = DivisibilityChecker.isDivisibleBy3(number);
 		assertEquals(expected, result);
 	}
