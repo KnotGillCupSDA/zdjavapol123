@@ -1,10 +1,14 @@
 package com.sda.testingadvanced.solution.parametrized;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import com.sda.testingadvanced.parametrized.Calculator;
 
 public class CalculatorTest {
 
@@ -29,12 +33,21 @@ public class CalculatorTest {
 	}
 
 	@Test
-	void shouldAddTwoNegativeNumbers() {
+	void shouldAddTwoPositiveNumbers() {
 		System.out.println("shouldAddTwoPositiveNumbers");
+
+		//given
+		Calculator calculator = new Calculator();
+
+		//when
+		double sum = calculator.add(3.0, 5.0);
+
+		//then
+		assertEquals(9.0, sum, "3 + 5 should be 8");
 	}
 
 	@Test
-	void shouldAddTwoPositiveNumbers() {
+	void shouldAddTwoNegativeNumbers() {
 		System.out.println("shouldAddTwoPositiveNumbers");
 	}
 }
