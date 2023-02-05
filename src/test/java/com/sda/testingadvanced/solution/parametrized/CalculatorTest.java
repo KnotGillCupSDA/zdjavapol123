@@ -12,6 +12,8 @@ import com.sda.testingadvanced.parametrized.Calculator;
 
 public class CalculatorTest {
 
+	private Calculator calculator;
+
 	@BeforeAll
 	static void beforeAll() {
 		System.out.println("beforeAll");
@@ -25,6 +27,7 @@ public class CalculatorTest {
 	@BeforeEach
 	void setUp() {
 		System.out.println("setUp");
+		calculator = new Calculator();
 	}
 
 	@AfterEach
@@ -36,18 +39,21 @@ public class CalculatorTest {
 	void shouldAddTwoPositiveNumbers() {
 		System.out.println("shouldAddTwoPositiveNumbers");
 
-		//given
-		Calculator calculator = new Calculator();
-
 		//when
 		double sum = calculator.add(3.0, 5.0);
 
 		//then
-		assertEquals(9.0, sum, "3 + 5 should be 8");
+		assertEquals(8.0, sum, "3 + 5 should be 8");
 	}
 
 	@Test
 	void shouldAddTwoNegativeNumbers() {
 		System.out.println("shouldAddTwoPositiveNumbers");
+
+		//when
+		double sum = calculator.add(-2.0, -1.0);
+
+		//then
+		assertEquals(-3.0, sum, "-2 + -1 should be -3");
 	}
 }
