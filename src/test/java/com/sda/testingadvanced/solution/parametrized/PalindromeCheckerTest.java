@@ -6,7 +6,7 @@ import org.junit.jupiter.params.provider.CsvSource;
 public class PalindromeCheckerTest {
 
 	@ParameterizedTest
-	@CsvSource(value = { "" })
-	void shouldTestIfStringIsPalindrome(String test, boolean expected) {
+	@CsvSource(value = { "kok, true", "sok, false" })
+	void shouldTestIfStringIsPalindrome(String text, boolean expected) {
 	}
 }
