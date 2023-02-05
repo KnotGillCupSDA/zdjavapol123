@@ -11,7 +11,7 @@ import com.sda.testingadvanced.parametrized.DivisibilityChecker;
 
 class DivisibilityCheckerTest {
 
-	@ParameterizedTest
+	@ParameterizedTest(name = "run #{index} with [{arguments}]" )
 	@ValueSource(ints = {-3, 0, 3, 9, 12})
 	void shouldBeDivisibleBy3(Integer number) {
 		assertTrue(DivisibilityChecker.isDivisibleBy3(number));
