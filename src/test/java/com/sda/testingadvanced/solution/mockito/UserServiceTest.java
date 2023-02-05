@@ -44,4 +44,19 @@ public class UserServiceTest {
 		verify(userRepository, times(1)).findById(7L);
 
 	}
+
+	@Test
+	void shouldThrowExceptionWhenNoUserWithGivenId() {
+		
+	}
+
+	@Test
+	void shouldAddValidUser() {
+
+	}
+
+	@Test
+	void shouldNotAddInvalidUser() {
+
+	}
 }
