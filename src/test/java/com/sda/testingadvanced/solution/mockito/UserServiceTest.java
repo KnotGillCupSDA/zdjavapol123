@@ -1,6 +1,7 @@
 package com.sda.testingadvanced.solution.mockito;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
@@ -11,7 +12,6 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import com.sda.testingadvanced.mockito.user.User;
@@ -25,7 +25,6 @@ public class UserServiceTest {
 	private UserRepository userRepository;
 	@Mock
 	private UserValidator userValidator;
-
 	@InjectMocks
 	private UserService userService;
 
@@ -47,7 +46,7 @@ public class UserServiceTest {
 
 	@Test
 	void shouldThrowExceptionWhenNoUserWithGivenId() {
-		
+		assertThrows(RuntimeException.class, () -> userService.getUserById(1L));
 	}
 
 	@Test
