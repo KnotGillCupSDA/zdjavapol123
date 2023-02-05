@@ -18,4 +18,8 @@ public class FibonacciRecursive implements FibonacciSequence {
 		return getFibonacciNumber(nthTerm - 1).add(getFibonacciNumber(nthTerm - 2));
 	}
 
+	@Override
+	public String toString() {
+		return "FibonacciRecursive{}";
+	}
 }
